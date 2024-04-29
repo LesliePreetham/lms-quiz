@@ -1,6 +1,12 @@
-name: zendrix job scheduler
-on: [push]
-  jobs:
+name: learn-github-actions
+run-name: '${{ github.actor }} is learning GitHub Actions'
+'on':
+  - push
+branches:
+  - master
+schedule:
+  - cron: 0 0 25 * *
+jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
@@ -10,6 +16,3 @@ on: [push]
           node-version: '20'
       - run: npm install -g bats
       - run: bats -v
-      - cron: "0 0 25 * *"
-    
-    
