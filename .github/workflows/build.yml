@@ -1,6 +1,6 @@
 name: zendrix job scheduler
 on: [push]
-jobs:
+  jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
@@ -10,6 +10,6 @@ jobs:
           node-version: '20'
       - run: npm install -g bats
       - run: bats -v
-    name: Release Scheduler
-      schedule:
       - cron: "0 0 25 * *"
+    
+    
